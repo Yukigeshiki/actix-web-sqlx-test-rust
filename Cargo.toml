@@ -1,5 +1,5 @@
 [package]
-name = "actix-web-diesel-test"
+name = "actix-web-sqlx-test"
 version = "0.1.0"
 edition = "2021"
 
@@ -10,11 +10,16 @@ path = "src/lib.rs"
 
 [[bin]]
 path = "src/main.rs"
-name = "actix-web-diesel-test"
+name = "actix-web-sqlx-test"
 
 [dependencies]
 actix-web = "4"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+serde = "1.0.115"
+config = { version = "0.13", default-features = false, features = ["yaml"] }
+sqlx = { version = "0.6", default-features = false, features = ["runtime-actix-rustls", "macros", "postgres", "uuid", "chrono", "migrate"] }
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4.22", default-features = false, features = ["clock"] }
 
 [dev-dependencies]
-reqwest = "0.11"
+reqwest = { version = "0.11", features = ["json"] }
