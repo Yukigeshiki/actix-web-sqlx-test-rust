@@ -8,7 +8,7 @@ use actix_web_sqlx_test::telemetry::{get_subscriber, init_subscriber};
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
-    let subscriber = get_subscriber("zero2prod".into(), "info".into(), std::io::stdout);
+    let subscriber = get_subscriber("actix-web-sqlx-test".into(), "info".into(), std::io::stdout);
     init_subscriber(subscriber);
 
     // stop application if get config or db connect fail
